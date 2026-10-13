@@ -1,0 +1,39 @@
+@Host = https://localhost:7183
+
+### Obtener todos los productos
+GET {{Host}}/api/productos
+
+### Obtener producto por id
+GET {{Host}}/api/productos/1
+
+### Buscar productos por nombre
+GET {{Host}}/api/productos/buscar?nombre=lap
+
+### Crear producto
+POST {{Host}}/api/productos
+Content-Type: application/json
+
+{
+  "nombre": "Monitor",
+  "descripcion": "Monitor 27 pulgadas 4K",
+  "precio": 349.99,
+  "stock": 15
+}
+
+### Actualizar producto
+PUT {{Host}}/api/productos/1
+Content-Type: application/json
+
+{
+  "nombre": "Laptop Actualizada",
+  "descripcion": "Laptop HP 15 pulgadas - Nueva versión",
+  "precio": 799.99,
+  "stock": 8,
+  "activo": true
+}
+
+### Eliminar producto
+DELETE {{Host}}/api/productos/2
+
+### Generar 10 productos aleatorios
+POST {{Host}}/api/productos/aleatorios/10
